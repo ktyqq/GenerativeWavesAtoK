@@ -41,7 +41,7 @@ function draw() {
 
 }
 function mousePressed() {
-  window.open("https://jsfiddle.net/");
+  window.open("https://ktyqq.github.io/GenerativeWavesAtoK/generativewaves/index.html");
     }
     
 function keyTyped(){
