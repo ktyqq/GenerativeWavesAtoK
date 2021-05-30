@@ -62,7 +62,7 @@ if(shouldDisplay){
   textAlign(CENTER, CENTER);
   textFont('Helvetica');
   textStyle(ITALIC);
-  text(starttext, windowWidth/2, 0.9*windowHeight);
+  text(starttext, windowWidth/2, 0.85*windowHeight);
   pop();
   }
 }
