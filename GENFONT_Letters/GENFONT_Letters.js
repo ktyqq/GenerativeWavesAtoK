@@ -36,7 +36,7 @@ function draw() {
     textAlign(CENTER, CENTER);
     fill(255);
     textFont('Helvetica');
-    text("type, lowercase and punctuations!\n space to save, click to play with generative waves", windowWidth/2, windowHeight*0.8);
+    text("type, lowercase and punctuations!\n space to save, click to play with generative waves", windowWidth/2, windowHeight*0.9);
   pop();
 
 }
