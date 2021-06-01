@@ -5,6 +5,10 @@
  * loop and unicode reference numbers to automatically fill the canvas with
  * characters in a grid. Vowels are selected and given a specific fill color.
  */
+
+//P5js Coding
+//Credits to Karen Ann Donnachie for this Type Sampler/GENFONT code, which has been edited and adapted by me for A to the K Studio, 2021
+
 let font, counter, letter,cnv;
 let fontsize ;
 
