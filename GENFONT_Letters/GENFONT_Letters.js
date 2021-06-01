@@ -6,11 +6,12 @@
  * characters in a grid. Vowels are selected and given a specific fill color.
  */
 
-//P5js Coding
+//P5js Code
 //Credits to Karen Ann Donnachie for this Type Sampler/GENFONT code, which has been edited and adapted by me for A to the K Studio, 2021
 
 let font, counter, letter,cnv;
 let fontsize ;
+let r, g, b;
 
 function preload() {
   // Ensure the .ttf or .otf font stored in the assets directory
@@ -20,8 +21,12 @@ function preload() {
 }
 
 function setup() {
+  r = random(240);
+  g = random(240);
+  b = random(240);
+  
   createCanvas(windowWidth, windowHeight);
-  fill(255);
+  //fill(r, g ,b);
   counter=54;
   letter = char(counter);
   // Set text characteristics
@@ -33,6 +38,7 @@ function setup() {
 function draw() {
   background(0);
     // Draw the letter to the screen
+    fill(r, g ,b);
     text(letter, windowWidth/2, windowHeight*0.4);
   
   push();
@@ -40,21 +46,28 @@ function draw() {
     textAlign(CENTER, CENTER);
     fill(255);
     textFont('Helvetica');
-    text("type in lowercase and punctuations! hit space to save!", windowWidth/2, windowHeight*0.85);
-    textFont('font');
-    textSize(24);
+    text("type in lowercase and punctuations, click for more colours~", windowWidth/2, windowHeight*0.85);
+  pop();
+  push();
+    textSize(45);
     textAlign(CENTER, CENTER);
     fill(255);
-    text("click to play with generative waves!");
+    text("hit space to play with generative waves!", windowWidth/2, windowHeight*0.9);
   pop();
 
 }
 function mousePressed() {
-  window.open("https://ktyqq.github.io/GenerativeWavesAtoK/generativewaves/index.html");
+  r = random(240);
+  g = random(240);
+  b = random(240);
     }
     
 function keyTyped(){
   if (key === ' '){
-  saveCanvas(letter, 'jpg');}
-  else {letter=key;}
+  window.open("https://ktyqq.github.io/GenerativeWavesAtoK/generativewaves/index.html");}
+  else {letter=key;
+  r = random(240);
+  g = random(240);
+  b = random(240);
+}
 }
