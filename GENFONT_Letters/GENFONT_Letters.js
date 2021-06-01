@@ -18,7 +18,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   fill(255);
-  counter=65;
+  counter=54;
   letter = char(counter);
   // Set text characteristics
   textFont(font);
