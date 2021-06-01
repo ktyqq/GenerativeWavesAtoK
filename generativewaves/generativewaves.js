@@ -1,3 +1,5 @@
+//Credits to and Inspired by Gene Kogan's Perlin Noise code, https://genekogan.com/code/p5js-perlin-noise/
+//SVG version of this code, used to create the font is stitched together kindly by Karen Ann Donnachie for A to the K studio, 2021
 var t;
 var title = 'welcome to \n generative waves';
 var myText = 'click to pause/play, press r to clear and enter to save!';
