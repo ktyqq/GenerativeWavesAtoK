@@ -1,3 +1,6 @@
+//Credits to and Inspired by Gene Kogan's Perlin Noise code, https://genekogan.com/code/p5js-perlin-noise/
+//SVG version of this code, used to create the font is stitched together kindly by Karen Ann Donnachie for A to the K studio, 2021
+
 var t;
 var title = 'welcome to \n generative waves';
 var myText = 'note: this is the code used to create the base of the generative waves typeface, \n most glyphs from the typeface have been created using this code with little to no editing, \n however not every latin glyph may be created without post-editing so please take note! \n now have your go at it! click to pause/play, press r to clear and enter to save!';
@@ -11,7 +14,7 @@ function setup() {
   noFill();
   t = 0;
   background(255);
-  frameRate(20);
+  frameRate(20); // added frame rate to better control how many curves are produced
 }
 
 function preload(){
@@ -21,11 +24,11 @@ function preload(){
 function draw() {
   
 if(shouldDisplay){
-  stroke(10, 100);
-  noFill();
+  stroke(10, 100); // changed fill and stroke settings for clarity when produding typeface
+  noFill(); 
 //curves generating
   var x1 = width  * noise(t + 10);
-  var x2 = mouseX * noise(t + 20);
+  var x2 = mouseX * noise(t + 20); //changed var from width n height to mouseX and mouseY for more control over the curve production
   var x3 = width * noise(t + 30);
   var x4 = mouseX * noise(t + 40);
   var y1 = mouseY * noise(t + 50);
@@ -38,7 +41,7 @@ if(shouldDisplay){
   t += 0.009;
   }
 
- if(instruct){
+ if(instruct){ //instructions overlay
   //overlay
   rectMode(CENTER);
   noStroke();
@@ -69,15 +72,15 @@ if(shouldDisplay){
   
 
 function mousePressed(){
-  shouldDisplay = !shouldDisplay;
+  shouldDisplay = !shouldDisplay; //pause and play function
 }
 
 function keyPressed() {
   if (keyCode === 82) {
-  instruct = false;
+  instruct = false; //clear screen functions
   clear();
   }
   if (keyCode === ENTER) {
-    save();
+    save(); // save .png function
   } 
 }
