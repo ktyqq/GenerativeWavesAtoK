@@ -1,8 +1,6 @@
-//Credits to and Inspired by Gene Kogan's Perlin Noise code, https://genekogan.com/code/p5js-perlin-noise/
-//SVG version of this code, used to create the font is stitched together kindly by Karen Ann Donnachie for A to the K studio, 2021
 var t;
 var title = 'welcome to \n generative waves';
-var myText = 'click to pause/play, press r to clear and enter to save!';
+var myText = 'note: this is the code used to create the base of the generative waves typeface, \n most glyphs from the typeface have been created using this code with little to no editing, \n however not every latin glyph may be created without post-editing so please take note! \n now have your go at it! click to pause/play, press r to clear and enter to save!';
 var starttext = 'hit r to start!';
 var shouldDisplay = true;
 var instruct = true;
@@ -13,7 +11,7 @@ function setup() {
   noFill();
   t = 0;
   background(255);
-  frameRate(20); //added so the curves are better controlled and drawn slower
+  frameRate(20);
 }
 
 function preload(){
@@ -27,7 +25,7 @@ if(shouldDisplay){
   noFill();
 //curves generating
   var x1 = width  * noise(t + 10);
-  var x2 = mouseX * noise(t + 20); //changed to control the curves better and feel more interactive
+  var x2 = mouseX * noise(t + 20);
   var x3 = width * noise(t + 30);
   var x4 = mouseX * noise(t + 40);
   var y1 = mouseY * noise(t + 50);
@@ -55,7 +53,7 @@ if(shouldDisplay){
   push();
   //instructions
   fill(62, 131, 181);
-  textSize(20);
+  textSize(15);
   textAlign(CENTER, CENTER);
   textFont('Helvetica');
   text(myText, windowWidth/2, 0.8*windowHeight);
@@ -64,22 +62,22 @@ if(shouldDisplay){
   textAlign(CENTER, CENTER);
   textFont('Helvetica');
   textStyle(ITALIC);
-  text(starttext, windowWidth/2, 0.85*windowHeight);
+  text(starttext, windowWidth/2, 0.95*windowHeight);
   pop();
   }
 }
   
 
 function mousePressed(){
-  shouldDisplay = !shouldDisplay; //pause and play function
+  shouldDisplay = !shouldDisplay;
 }
 
 function keyPressed() {
   if (keyCode === 82) {
   instruct = false;
-  clear(); //clear screen function
+  clear();
   }
   if (keyCode === ENTER) {
-    save(); //save .png function
+    save();
   } 
 }
