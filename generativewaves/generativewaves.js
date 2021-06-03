@@ -24,7 +24,7 @@ function preload(){
 function draw() {
   
 if(shouldDisplay){
-  stroke(10, 100); // changed fill and stroke settings for clarity when produding typeface
+  stroke(10, 100); // changed fill and stroke settings for clarity when producing typeface
   noFill(); 
 //curves generating
   var x1 = width  * noise(t + 10);
