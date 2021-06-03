@@ -11,7 +11,7 @@
 
 let font, counter, letter,cnv;
 let fontsize ;
-let r, g, b;
+let r, g, b; // random colour generator
 
 function preload() {
   // Ensure the .ttf or .otf font stored in the assets directory
@@ -21,13 +21,13 @@ function preload() {
 }
 
 function setup() {
-  r = random(240);
-  g = random(240);
+  r = random(240); //random colour generated
+  g = random(240); // not set all the way to 255 as the background is 255
   b = random(240);
   
   createCanvas(windowWidth, windowHeight);
   //fill(r, g ,b);
-  counter=54;
+  counter=54; // start with another character other than capital A as my typeface doesn't have capital letters
   letter = char(counter);
   // Set text characteristics
   textFont(font);
@@ -38,7 +38,7 @@ function setup() {
 function draw() {
   background(0);
     // Draw the letter to the screen
-    fill(r, g ,b);
+    fill(r, g ,b); //different colour woth each letter drawn
     text(letter, windowWidth/2, windowHeight*0.4);
   
   push();
@@ -56,7 +56,7 @@ function draw() {
   pop();
 
 }
-function mousePressed() {
+function mousePressed() { //changes colour for current glyph without changing glpyhs
   r = random(240);
   g = random(240);
   b = random(240);
@@ -64,7 +64,7 @@ function mousePressed() {
     
 function keyTyped(){
   if (key === ' '){
-  window.open("https://ktyqq.github.io/GenerativeWavesAtoK/generativewaves/index.html");}
+  window.open("https://ktyqq.github.io/GenerativeWavesAtoK/generativewaves/index.html");} //opens second part of sampler
   else {letter=key;
   r = random(240);
   g = random(240);
