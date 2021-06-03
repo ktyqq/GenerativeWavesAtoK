@@ -13,7 +13,7 @@ function setup() {
   noFill();
   t = 0;
   background(255);
-  frameRate(20);
+  frameRate(20); //added so the curves are better controlled and drawn slower
 }
 
 function preload(){
@@ -27,7 +27,7 @@ if(shouldDisplay){
   noFill();
 //curves generating
   var x1 = width  * noise(t + 10);
-  var x2 = mouseX * noise(t + 20);
+  var x2 = mouseX * noise(t + 20); //changed to control the curves better and feel more interactive
   var x3 = width * noise(t + 30);
   var x4 = mouseX * noise(t + 40);
   var y1 = mouseY * noise(t + 50);
@@ -71,15 +71,15 @@ if(shouldDisplay){
   
 
 function mousePressed(){
-  shouldDisplay = !shouldDisplay;
+  shouldDisplay = !shouldDisplay; //pause and play function
 }
 
 function keyPressed() {
   if (keyCode === 82) {
   instruct = false;
-  clear();
+  clear(); //clear screen function
   }
   if (keyCode === ENTER) {
-    save();
+    save(); //save .png function
   } 
 }
